@@ -1,2 +1,2 @@
 # REMakers
-ReMakersのコード置き場
+ReMakers合宿のコード置き場
