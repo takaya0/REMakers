@@ -5,10 +5,12 @@ using namespace std;
 int dp[MAX_K+1];
 int n, a[101], m[101], K;
 void DP(){
-  memset(dp, -1, sizeof(dp));//-1に初期化
+  for(int i = 0; i < MAX_K + 1; i++){
+    dp[i] = -1;
+  }//-1に初期化
   dp[0] = 0;
   for(int i = 0; i < n; i++){
-    for(int j = 0; j < K; j++){
+    for(int j = 0; j <= K; j++){
       if(dp[j] >= 0){
         dp[j] = m[i];
       } else if(j < a[i] || dp[j-a[i]] <= 0){
@@ -29,7 +31,7 @@ int main(){
   if(dp[K] >= 0){
     printf("Yes\n");
   }else{
-    printf("N0\n");
+    printf("No\n");
   }
   return 0;
 }
